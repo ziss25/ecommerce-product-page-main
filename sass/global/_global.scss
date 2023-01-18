@@ -1,0 +1,28 @@
+body {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  @media (min-width: $desktop) {
+    padding: 0 7em;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.none {
+  display: none;
+}

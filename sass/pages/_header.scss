@@ -1,0 +1,143 @@
+.header {
+  height: 55px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.75rem;
+  @media (min-width: $desktop) {
+    border-bottom: 1px solid $Grayish-blue;
+    padding: 0;
+  }
+}
+
+.header__left {
+  align-items: center;
+  justify-content: space-between;
+  transform: translateY(-1px);
+
+  .hamb-icon {
+    width: 15px;
+    margin-right: 1rem;
+    transform: translateY(3px);
+    cursor: pointer;
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  .header__title {
+    transform: translateY(-2px);
+    @media (min-width: $desktop) {
+      font-size: $text-3xl;
+    }
+  }
+
+  .header__nav {
+    display: none;
+    @media (min-width: $desktop) {
+      display: block;
+      margin-left: 3rem;
+      ul {
+        display: flex;
+        li {
+          position: relative;
+          margin-right: 1rem;
+          cursor: pointer;
+          font-size: $text-base;
+          // tooltip hover nav
+          &:hover::before {
+            position: absolute;
+            content: '';
+            height: 2px;
+            background-color: $Orange;
+            border-radius: 4px;
+            right: 0;
+            left: 0;
+            bottom: -15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header__right {
+  position: relative;
+  align-items: center;
+  width: 75px;
+  justify-content: space-around;
+
+  .header__cart {
+    position: relative;
+    width: 20px;
+    transform: translateY(2px);
+    cursor: pointer;
+
+    // notification count cart
+    &::before {
+      content: '25';
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 8px;
+      padding: 2px 4px;
+      border-radius: 8px;
+      top: -8px;
+      right: -10px;
+      background-color: $Orange;
+    }
+  }
+
+  .header__profile {
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 2px;
+    img {
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+    }
+    &:hover {
+      border: 1px solid $Orange;
+    }
+  }
+
+  // component cart nya
+  .contain-cart {
+    // display: none;
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid red;
+    bottom: -230px;
+    right: 0;
+    .contain-cart__title {
+      padding: 8px 12px;
+      font-family: 'Kumbh Sans', sans-serif;
+      color: $Dark-grayish-blue;
+      h4 {
+        font-size: 1rem;
+      }
+    }
+    .contain-cart__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Kumbh Sans', sans-serif;
+      height: calc(100% - 50px);
+      color: $Dark-grayish-blue;
+      h4 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media (min-width: $desktop) {
+    width: 80px;
+    justify-content: space-between;
+  }
+}

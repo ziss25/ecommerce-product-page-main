@@ -1,0 +1,39 @@
+.nav-mobile {
+  position: absolute;
+  width: 250px;
+  background-color: $White;
+  // border: 1px solid red;
+  top: 0;
+  left: -1000px;
+  bottom: 0;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  // default nya ia hilang
+  transition: left 300ms ease-in-out;
+
+  .close {
+    width: 18px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  ul {
+    li {
+      margin-bottom: 1rem;
+    }
+    li:hover {
+      color: $Orange;
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}
+
+// animation ketika di click ... tampilkan compnent nya
+.end {
+  left: 0;
+  transition: left 300ms ease-in-out;
+}

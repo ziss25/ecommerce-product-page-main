@@ -1,0 +1,45 @@
+// breakpoint
+$desktop: 1000px;
+
+// --- Primary colors ----
+$Orange: hsl(26, 100%, 55%);
+$Pale-orange: hsl(25, 100%, 94%);
+
+// --- Neutral colors ----
+// title
+$Very-dark-blue: hsl(220, 13%, 13%);
+// subtitle
+$Dark-grayish-blue: hsl(219, 9%, 45%);
+$Grayish-blue: hsl(220, 14%, 75%);
+// others
+$Light-grayish-blue: hsl(223, 64%, 98%);
+// body
+$White: hsl(0, 0%, 100%);
+// opactity
+$Black: hsl(0, 0%, 0%); // (with 75% opacity for lightbox background)
+
+// --- Font weight ---
+$font-md: 400;
+$font-lg: 700;
+
+// font-size
+$text-base: 1rem; /* 16px */
+$line-height-base: 1.5rem; /* 24px */
+
+$text-lg: 1.125rem; /* 18px */
+$line-height-lg: 1.75rem; /* 28px */
+
+$text-xl: 1.25rem; /* 20px */
+$line-height-xl: 1.75rem; /* 28px */
+
+$text-2xl: 1.5rem; /* 24px */
+$line-height-2xl: 2rem; /* 32px */
+
+$text-3xl: 1.875rem; /* 30px */
+$line-height-3xl: 2.25rem; /* 36px */
+
+$text-4xl: 2.25rem; /* 36px */
+$line-height-4xl: 2.5rem; /* 40px */
+
+$text-5xl: 3rem; /* 48px */
+$line-height-5xl: 1;

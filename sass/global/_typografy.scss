@@ -1,0 +1,47 @@
+// font family
+h1,
+h2,
+h3,
+p,
+span,
+li {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+// color title
+h1,
+h2,
+h3 {
+  color: $Very-dark-blue;
+}
+
+// sizing font
+h1 {
+  font-size: $text-4xl;
+  line-height: $line-height-4xl;
+}
+h2 {
+  font-size: $text-3xl;
+  line-height: $line-height-3xl;
+}
+h3 {
+  font-size: $text-2xl;
+  line-height: $line-height-2xl;
+  font-weight: 700;
+}
+h4 {
+  font-size: $text-xl;
+  line-height: $line-height-xl;
+}
+
+// color subtitle
+li {
+  font-size: $text-base;
+  font-weight: $font-md;
+  color: $Dark-grayish-blue;
+}
+p {
+  font-size: $text-base;
+  line-height: $line-height-base;
+  color: $Dark-grayish-blue;
+}
