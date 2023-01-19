@@ -9,9 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/dist/style.css" />
-    <title>Frontend Mentor | E-commerce product page</title>
+    <title>E-commerce product page</title>
   </head>
   <body>
+    <!--------- start header section ---------->
     <header class="header flex">
       <div class="flex header__left">
         <div class="hamb-icon">
@@ -28,24 +29,57 @@
           </ul>
         </nav>
       </div>
+
       <div class="flex header__right">
-        <div class="header__cart">
+        <div cart class="header__cart">
           <img src="/images/icon-cart.svg" alt="" />
         </div>
+
         <div class="header__profile">
           <img src="/images/image-avatar.png" alt="" />
         </div>
-        <div class="contain-cart">
-          <div class="contain-cart__title">
-            <h4>Cart</h4>
+
+        <div modal-cart class="modal-cart none">
+          <div class="modal-head">
+            <h4 class="modal-head__title">Cart</h4>
+            <hr />
           </div>
-          <hr />
-          <div class="contain-cart__content">
-            <h4>Your cart is empty</h4>
+
+          <div class="modal-body">
+            <div class="modal-body__content">
+              <div class="modal-item">
+                <div class="image-product">
+                  <img src="/images/image-product-4-thumbnail.jpg" alt="" srcset="" />
+                </div>
+                <div class="description-product">
+                  <p>Fall Limited Edition Sneakers $125.00 x 3 <span>$375.00</span></p>
+                </div>
+              </div>
+              <div class="modal-item">
+                <div class="image-product">
+                  <img src="/images/image-product-4-thumbnail.jpg" alt="" srcset="" />
+                </div>
+                <div class="description-product">
+                  <p>Fall Limited Edition Sneakers $125.00 x 3 <span>$375.00</span></p>
+                </div>
+              </div>
+              <div class="modal-item">
+                <div class="image-product">
+                  <img src="/images/image-product-4-thumbnail.jpg" alt="" srcset="" />
+                </div>
+                <div class="description-product">
+                  <p>Fall Limited Edition Sneakers $125.00 x 3 <span>$375.00</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-body__btn">
+              <button>checkout</button>
+            </div>
           </div>
         </div>
       </div>
     </header>
+
     <aside class="nav-mobile">
       <div class="close">
         <img src="/images/icon-close.svg" alt="" srcset="" />
@@ -60,6 +94,9 @@
         </ul>
       </nav>
     </aside>
+
+    <!--------- end header section ---------->
+
     <!-- Sneaker Company Fall Limited Edition Sneakers These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer. $125.00 50% $250.00 0 Add to
     cart
     <div style="width: 100px; height: 100px" class="test"></div>

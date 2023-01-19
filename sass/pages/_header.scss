@@ -3,10 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 0.75rem;
+
   @media (min-width: $desktop) {
     border-bottom: 1px solid $Grayish-blue;
     padding: 0;
   }
+
+  // dan default ..... header akan menjadi parent for cart componen , jika udah ukuran dekstop maka parent nya bukan header lagi melainkan ( header - right )
+  position: relative;
 }
 
 .header__left {
@@ -31,6 +35,7 @@
     }
   }
 
+  // nav dekstop ... kalo nav mobile ada di asside
   .header__nav {
     display: none;
     @media (min-width: $desktop) {
@@ -61,7 +66,7 @@
 }
 
 .header__right {
-  position: relative;
+  // position: relative;
   align-items: center;
   width: 75px;
   justify-content: space-around;
@@ -105,39 +110,10 @@
     }
   }
 
-  // component cart nya
-  .contain-cart {
-    // display: none;
-    position: absolute;
-    width: 250px;
-    height: 200px;
-    background-color: white;
-    border: 1px solid red;
-    bottom: -230px;
-    right: 0;
-    .contain-cart__title {
-      padding: 8px 12px;
-      font-family: 'Kumbh Sans', sans-serif;
-      color: $Dark-grayish-blue;
-      h4 {
-        font-size: 1rem;
-      }
-    }
-    .contain-cart__content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Kumbh Sans', sans-serif;
-      height: calc(100% - 50px);
-      color: $Dark-grayish-blue;
-      h4 {
-        font-size: 1rem;
-      }
-    }
-  }
-
   @media (min-width: $desktop) {
     width: 80px;
     justify-content: space-between;
+    // jadi gini....  di ukuran dekstop header right akan menjadi parent untuk modal cart component nya..
+    position: relative;
   }
 }

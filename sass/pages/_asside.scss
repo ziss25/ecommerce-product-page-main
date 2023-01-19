@@ -1,15 +1,15 @@
+// nav mobile
 .nav-mobile {
   position: absolute;
   width: 250px;
   background-color: $White;
-  // border: 1px solid red;
   top: 0;
   left: -1000px;
   bottom: 0;
   padding-top: 1rem;
   padding-left: 1rem;
-  // default nya ia hilang
   transition: left 300ms ease-in-out;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
   .close {
     width: 18px;
@@ -19,7 +19,7 @@
 
   ul {
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
     li:hover {
       color: $Orange;
