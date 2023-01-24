@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 0.75rem;
+  // margin-bottom: 3rem;
 
   @media (min-width: $desktop) {
-    border-bottom: 1px solid $Grayish-blue;
+    border-bottom: 2px solid #e2e2e2;
     padding: 0;
   }
 

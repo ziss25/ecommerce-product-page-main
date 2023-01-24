@@ -68,9 +68,9 @@ p {
 body {
   width: 100%;
   position: relative;
-  height: 100vh;
+  height: 3000px;
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   body {
     padding: 0 7em;
   }
@@ -107,9 +107,9 @@ ul {
   padding: 0 0.75rem;
   position: relative;
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .header {
-    border-bottom: 1px solid hsl(220deg, 14%, 75%);
+    border-bottom: 2px solid #e2e2e2;
     padding: 0;
   }
 }
@@ -125,7 +125,7 @@ ul {
   transform: translateY(3px);
   cursor: pointer;
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .header__left .hamb-icon {
     display: none;
   }
@@ -133,7 +133,7 @@ ul {
 .header__left .header__title {
   transform: translateY(-2px);
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .header__left .header__title {
     font-size: 1.875rem;
   }
@@ -141,7 +141,7 @@ ul {
 .header__left .header__nav {
   display: none;
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .header__left .header__nav {
     display: block;
     margin-left: 3rem;
@@ -207,7 +207,7 @@ ul {
 .header__right .header__profile:hover {
   border: 1px solid hsl(26deg, 100%, 55%);
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .header__right {
     width: 80px;
     justify-content: space-between;
@@ -226,6 +226,7 @@ ul {
   padding-left: 1rem;
   transition: left 300ms ease-in-out;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
 }
 .nav-mobile .close {
   width: 18px;
@@ -239,7 +240,7 @@ ul {
   color: hsl(26deg, 100%, 55%);
   cursor: pointer;
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .nav-mobile {
     display: none;
   }
@@ -260,8 +261,9 @@ ul {
   font-family: "Kumbh Sans", sans-serif;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   background-color: hsl(0deg, 0%, 100%);
+  z-index: 2;
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .modal-cart {
     width: 350px;
     left: initial;
@@ -273,7 +275,7 @@ ul {
   margin-left: 1rem;
   margin-bottom: 0.2rem;
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .modal-head__title {
     font-size: 20px;
   }
@@ -317,8 +319,109 @@ ul {
   border: none;
   cursor: pointer;
 }
-@media (min-width: 1000px) {
+@media (min-width: 962px) {
   .modal-body__btn button {
     font-size: 1.15rem;
   }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 962px) {
+  .main {
+    grid-template-columns: 400px 1fr;
+    margin-top: 3rem;
+  }
+}
+
+.main__image-product {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+@media (min-width: 650px) {
+  .main__image-product {
+    width: 50%;
+    margin: auto;
+  }
+}
+@media (min-width: 962px) {
+  .main__image-product {
+    width: 90%;
+  }
+}
+.main__image-product .swiper-slide {
+  width: 100%;
+}
+.main__image-product .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.main__image-product .mySwiper-item {
+  margin-top: 1rem;
+  display: none;
+}
+@media (min-width: 962px) {
+  .main__image-product .mySwiper-item {
+    display: block;
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: hsl(223deg, 64%, 98%);
+  border-radius: 50%;
+}
+.swiper-button-prev img,
+.swiper-button-next img {
+  transform: scale(0.25);
+}
+@media (min-width: 962px) {
+  .swiper-button-prev,
+.swiper-button-next {
+    display: none;
+  }
+}
+
+.main__description {
+  padding: 1rem;
+}
+@media (min-width: 650px) {
+  .main__description {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+@media (min-width: 650px) {
+  .main__description {
+    margin-top: 1rem;
+    text-align: start;
+  }
+}
+.main__description h3 {
+  color: hsl(26deg, 100%, 55%);
+  font-size: 1rem;
+}
+.main__description h1 {
+  font-size: 1.875rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */

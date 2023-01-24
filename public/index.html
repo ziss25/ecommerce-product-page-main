@@ -3,14 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- displays site properly based on user's device -->
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <!-- font google  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- my style  -->
     <link rel="stylesheet" href="/dist/style.css" />
+
     <title>E-commerce product page</title>
   </head>
+
   <body>
     <!--------- start header section ---------->
     <header class="header flex">
@@ -80,6 +90,7 @@
       </div>
     </header>
 
+    <!-- nav mobile  -->
     <aside class="nav-mobile">
       <div class="close">
         <img src="/images/icon-close.svg" alt="" srcset="" />
@@ -94,13 +105,70 @@
         </ul>
       </nav>
     </aside>
-
     <!--------- end header section ---------->
 
-    <!-- Sneaker Company Fall Limited Edition Sneakers These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer. $125.00 50% $250.00 0 Add to
-    cart
-    <div style="width: 100px; height: 100px" class="test"></div>
-    <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div> -->
-    <script src="main.js"></script>
+    <main class="main">
+      <section class="main__image-product">
+        <section class="swiper mySwiper-tumb">
+          <!-- wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides item-->
+            <div class="swiper-slide">
+              <img src="/images/image-product-1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/image-product-2.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/image-product-3.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/image-product-4.jpg" alt="" />
+            </div>
+          </div>
+          <!-- pagination  -->
+          <div class="swiper-button-prev">
+            <img src="/images/icon-previous.svg" alt="" srcset="" />
+          </div>
+          <div class="swiper-button-next">
+            <img src="/images/icon-next.svg" alt="" srcset="" />
+          </div>
+        </section>
+
+        <!-- dektop component -->
+        <div thumbsSlider="" class="swiper mySwiper-item">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/images/image-product-1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/image-product-2.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/image-product-3.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/image-product-4.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__description">
+        <h3 class="company-title">SNEAKERS COMPANY</h3>
+        <h1 class="title">Fall Limited Edition Sneakers</h1>
+        <p class="text">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer</p>
+        <h2>$125.00 <span>50%</span></h2>
+        <p>$250.00</p>
+      </section>
+    </main>
+
+    <script type="module" src="main.js"></script>
   </body>
 </html>
+
+<!-- Sneaker Company Fall Limited Edition Sneakers .x  0 Add to
+      cart
+      <div style="width: 100px; height: 100px" class="test"></div>
+      <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div> -->
+<!-- <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> -->
