@@ -1,0 +1,155 @@
+.main__description {
+  padding: 1rem;
+
+  @media (min-width: $tablet) {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  @media (min-width: $tablet) {
+    margin-top: 1rem;
+    text-align: start;
+  }
+
+  &__company-title {
+    color: $Orange;
+    font-size: $text-base;
+  }
+
+  &__title {
+    font-size: $text-3xl;
+    margin-bottom: 0.5rem;
+    font-weight: $font-lg;
+  }
+
+  &__text {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.priceContain {
+  // border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+
+  @media (min-width: $tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    h2 {
+      margin-right: 1rem;
+    }
+    p {
+      background-color: $Pale-orange;
+      color: $Orange;
+      padding: 0 8px;
+      font-size: $text-base;
+      font-weight: $font-lg;
+      border-radius: 4px;
+    }
+  }
+
+  &__pricePrev {
+    font-weight: $font-lg;
+    color: $Grayish-blue;
+
+    @media (min-width: $tablet) {
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+.product-utils {
+  // border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 1.5fr 2fr;
+    gap: 1.5rem;
+  }
+}
+
+.product-btn-count {
+  display: flex;
+  justify-content: space-between;
+  background-color: $Light-grayish-blue;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+
+  @media (min-width: $tablet) {
+    margin-top: 0;
+  }
+
+  &__num {
+    display: inline-block;
+    h3 {
+      font-size: $text-xl;
+      font-weight: $font-lg;
+
+      @media (min-width: $tablet) {
+        font-size: $text-base;
+      }
+    }
+  }
+
+  &__minus,
+  &__plus {
+    display: flex;
+    align-items: center;
+    width: 15px;
+    cursor: pointer;
+
+    @media (min-width: $tablet) {
+      width: 10px;
+    }
+  }
+}
+
+.product-btn-cart {
+  display: flex;
+  background-color: $Orange;
+  border-radius: 8px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 20px 25px -5px rgba(255, 237, 224, 1), 0 8px 10px -6px rgba(255, 237, 224, 1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  @media (min-width: $tablet) {
+    margin-top: 0;
+  }
+
+  &__icon {
+    width: 18px;
+    margin-right: 0.5rem;
+    @media (min-width: $tablet) {
+      width: 16px;
+    }
+  }
+
+  &__text {
+    color: white;
+    font-size: $text-base;
+    transform: translateY(-1px);
+  }
+}

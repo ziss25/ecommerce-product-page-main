@@ -108,10 +108,11 @@
     <!--------- end header section ---------->
 
     <main class="main">
+      <!-- image pruduct -->
       <section class="main__image-product">
-        <section class="swiper mySwiper-tumb">
+        <section class="swiper mySwiper-tumb" images-contain>
           <!-- wrapper -->
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper" id="lightbox-on">
             <!-- Slides item-->
             <div class="swiper-slide">
               <img src="/images/image-product-1.jpg" alt="" />
@@ -154,21 +155,96 @@
         </div>
       </section>
 
+      <!-- description-product -->
       <section class="main__description">
-        <h3 class="company-title">SNEAKERS COMPANY</h3>
-        <h1 class="title">Fall Limited Edition Sneakers</h1>
-        <p class="text">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer</p>
-        <h2>$125.00 <span>50%</span></h2>
-        <p>$250.00</p>
+        <h3 class="main__description__company-title">SNEAKERS COMPANY</h3>
+        <h1 class="main__description__title">Fall Limited Edition Sneakers</h1>
+        <p class="main__description__text">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer</p>
+        <div class="priceContain">
+          <div class="price">
+            <h2>$125.00</h2>
+            <p>50%</p>
+          </div>
+          <del class="priceContain__pricePrev">$250.00</del>
+        </div>
+
+        <!-- contain btn pruduct -->
+        <div class="product-utils">
+          <div class="product-btn-count">
+            <div class="product-btn-count__minus" btn-minus>
+              <img src="/images/icon-minus.svg" alt="" />
+            </div>
+            <div class="product-btn-count__num" btn-output>
+              <h3>0</h3>
+            </div>
+            <div class="product-btn-count__plus" btn-plus>
+              <img src="/images/icon-plus.svg" alt="" />
+            </div>
+          </div>
+          <div class="product-btn-cart" btn-cart>
+            <div class="product-btn-cart__icon">
+              <img src="/images/icon-cart-white.svg" alt="" srcset="" />
+            </div>
+            <h3 class="product-btn-cart__text">Add to cart</h3>
+          </div>
+        </div>
       </section>
     </main>
 
+    <!-- lightbox for version dekstop -->
+    <!-- penambahan element untuk sebagai lightbox-black nya  dan rencananya di manipulasi lewat js nya aja -->
+    <section class="lightbox-theme none" lightbox-theme></section>
+    <section class="lightbox-modal none" lightbox-modal>
+      <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper tumb-lightbox">
+        <div class="swiper-close">
+          <div class="close" lightbox-close>
+            <img src="/images/icon-close.svg" alt="" srcset="" />
+          </div>
+        </div>
+        <div class="swiper-wrapper">
+          <!-- Slides item-->
+          <div class="swiper-slide">
+            <img src="/images/image-product-1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/image-product-2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/image-product-3.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/image-product-4.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev lightbox-prev">
+        <img src="/images/icon-previous.svg" alt="" srcset="" />
+      </div>
+      <div class="swiper-button-next lightbox-next">
+        <img src="/images/icon-next.svg" alt="" srcset="" />
+      </div>
+      <div thumbsSlider="" class="swiper item-lightbox">
+        <div class="swiper-wrapper">
+          <!-- Slides item-->
+          <div class="swiper-slide">
+            <img src="/images/image-product-1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/image-product-2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/image-product-3.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/image-product-4.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script type="module" src="main.js"></script>
+
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
-
-<!-- Sneaker Company Fall Limited Edition Sneakers .x  0 Add to
-      cart
-      <div style="width: 100px; height: 100px" class="test"></div>
-      <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div> -->
-<!-- <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> -->

@@ -3,9 +3,28 @@ body {
   position: relative;
   // height: 100vh;
   height: 3000px;
-  // background-color: $Light-grayish-blue;
+
+  background-color: $Light-grayish-blue;
+  // background-color: black;
+  // opacity: 0.5;
+
+  @media (min-width: $tablet) {
+    padding: 0 3rem;
+  }
+
   @media (min-width: $desktop) {
-    padding: 0 7em;
+    padding: 0 8rem;
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  align-items: center;
+  @media (min-width: $desktop) {
+    grid-template-columns: 400px 1fr;
+    margin-top: 3rem;
   }
 }
 
