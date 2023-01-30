@@ -79,8 +79,7 @@
     cursor: pointer;
 
     // notification count cart
-    &::before {
-      content: '25';
+    .count-product-notificaton {
       display: flex;
       position: absolute;
       justify-content: center;
@@ -90,7 +89,7 @@
       padding: 2px 4px;
       border-radius: 8px;
       top: -8px;
-      right: -10px;
+      right: -5px;
       background-color: $Orange;
     }
   }

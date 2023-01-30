@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- displays site properly based on user's device -->
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
     <!-- font google  -->
@@ -43,6 +41,7 @@
       <div class="flex header__right">
         <div cart class="header__cart">
           <img src="/images/icon-cart.svg" alt="" />
+          <div class="count-product-notificaton">0</div>
         </div>
 
         <div class="header__profile">
@@ -56,32 +55,10 @@
           </div>
 
           <div class="modal-body">
-            <div class="modal-body__content">
-              <div class="modal-item">
-                <div class="image-product">
-                  <img src="/images/image-product-4-thumbnail.jpg" alt="" srcset="" />
-                </div>
-                <div class="description-product">
-                  <p>Fall Limited Edition Sneakers $125.00 x 3 <span>$375.00</span></p>
-                </div>
-              </div>
-              <div class="modal-item">
-                <div class="image-product">
-                  <img src="/images/image-product-4-thumbnail.jpg" alt="" srcset="" />
-                </div>
-                <div class="description-product">
-                  <p>Fall Limited Edition Sneakers $125.00 x 3 <span>$375.00</span></p>
-                </div>
-              </div>
-              <div class="modal-item">
-                <div class="image-product">
-                  <img src="/images/image-product-4-thumbnail.jpg" alt="" srcset="" />
-                </div>
-                <div class="description-product">
-                  <p>Fall Limited Edition Sneakers $125.00 x 3 <span>$375.00</span></p>
-                </div>
-              </div>
+            <div class="modal-body__content" id="tes">
+              <!-- item manipulation for js -->
             </div>
+
             <div class="modal-body__btn">
               <button>checkout</button>
             </div>
@@ -242,6 +219,7 @@
       </div>
     </section>
 
+    <!-- my script -->
     <script type="module" src="main.js"></script>
 
     <!-- sweetalert2 -->

@@ -47,8 +47,12 @@ const BTN__MINUS = document.querySelector('[btn-minus]');
 const BTN__PLUS = document.querySelector('[btn-plus]');
 const BTN__CART = document.querySelector('[btn-cart]');
 const BTN__output = document.querySelector('[btn-output]');
+// cart contain for item
+const cartContain = document.querySelector('.modal-body__content');
+const cartCountNotifaction = document.querySelector('.count-product-notificaton');
+// console.log(cartCountNotifaction);
 // data count sementara
-let count = 1;
+let count = 0;
 BTN__MINUS.addEventListener('click', () => {
   if (count === 0) return;
   count--;
@@ -59,12 +63,65 @@ BTN__PLUS.addEventListener('click', () => {
   BTN__output.innerHTML = `<h3>${count}</h3>`;
 });
 BTN__CART.addEventListener('click', () => {
+  // validasi jika jumlah nya 0;
+  if (count === 0) return;
   Swal.fire({
-    title: 'sory...admin lagi tahap development',
+    title: `${count}`,
     icon: 'question',
-    confirmButtonText: 'okay?',
+    confirmButtonText: 'success?',
   });
+
+  const basePurchase = 125;
+  const itemCheckOut = `
+    <div class="modal-item">
+      <div class="image-product">
+        <img src="/images/image-product-4-thumbnail.jpg" alt="" srcset="" />
+      </div>
+      <div class="description-product">
+        <p>Fall Limited Edition Sneakers $${basePurchase}.00 x ${count} <span>$${basePurchase * count}.00 </span></p>
+      </div>
+      <div class="icon-delete">
+        <img src="/images/icon-delete.svg" alt="" />
+      </div>
+    </div> `;
+
+  // element sebelumnya ditambah sama yg sekarang habis itu render semua nya
+  cartContain.innerHTML += itemCheckOut;
+
+  notificationProduct();
+  removeElement();
+
+  // total purchase keknya disini
+  // ini hanya sementara jadi lanjut besok.....
+  const tes = cartContain.children;
+  let totalPurchase = 0;
+  for (const key in tes) {
+    if (Object.hasOwnProperty.call(tes, key)) {
+      const element = tes[key];
+      let total = element.children[1].children[0].children[0];
+      const memisahkanMataUang = total.textContent.split('$');
+      const memisahkanNol = memisahkanMataUang[1].split('.00');
+      totalPurchase += parseInt(memisahkanNol[0]);
+      // console.log(memisahkanNol);
+    }
+  }
+  console.log(totalPurchase);
 });
+
+function notificationProduct() {
+  const countProductItem = cartContain.children.length;
+  cartCountNotifaction.textContent = countProductItem;
+}
+
+function removeElement() {
+  const iconDeleteAll = document.querySelectorAll('.icon-delete');
+  iconDeleteAll.forEach((item) => {
+    item.addEventListener('click', () => {
+      item.parentElement.remove();
+      notificationProduct();
+    });
+  });
+}
 
 // lightbox
 const lightboxClose = document.querySelector('[lightbox-close]');

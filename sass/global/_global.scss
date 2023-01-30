@@ -1,8 +1,8 @@
 body {
   width: 100%;
   position: relative;
-  // height: 100vh;
-  height: 3000px;
+  height: 100vh;
+  // height: 3000px;
 
   background-color: $Light-grayish-blue;
   // background-color: black;
@@ -25,6 +25,10 @@ body {
   @media (min-width: $desktop) {
     grid-template-columns: 400px 1fr;
     margin-top: 3rem;
+  }
+  @media (min-width: 1440px) {
+    width: 1200px;
+    margin: 3rem auto;
   }
 }
 

@@ -10,6 +10,7 @@
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   background-color: $White;
   z-index: 2;
+  border-radius: 8px;
 
   // jika ukuran dekstop maka kasih dimensi width fix & left position nya hilankan karna parent nya bukan header melainkan ( header - right )
   @media (min-width: $desktop) {
@@ -37,13 +38,19 @@
   padding: 1em;
 
   &__content {
+    // border: 1px solid red;
     overflow: auto;
     margin-bottom: 2rem;
     .modal-item {
       display: grid;
-      grid-template-columns: 60px 1fr;
+      grid-template-columns: 60px 1fr 15px;
       align-items: center;
       margin-bottom: 1rem;
+      padding-right: 1rem;
+      gap: 0.3rem;
+      .icon-delete {
+        cursor: pointer;
+      }
       .image-product {
         margin-right: 1rem;
         transform: translateY(1px);
