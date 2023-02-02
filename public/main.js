@@ -47,28 +47,35 @@ const BTN__MINUS = document.querySelector('[btn-minus]');
 const BTN__PLUS = document.querySelector('[btn-plus]');
 const BTN__CART = document.querySelector('[btn-cart]');
 const BTN__output = document.querySelector('[btn-output]');
+const BTN__checkout = document.querySelector('.checkout');
+
 // cart contain for item
 const cartContain = document.querySelector('.modal-body__content');
 const cartCountNotifaction = document.querySelector('.count-product-notificaton');
-// console.log(cartCountNotifaction);
+
 // data count sementara
 let count = 0;
+
+cartContain.innerHTML = emptyComponent();
+
 BTN__MINUS.addEventListener('click', () => {
   if (count === 0) return;
   count--;
   BTN__output.innerHTML = `<h3>${count}</h3>`;
 });
+
 BTN__PLUS.addEventListener('click', () => {
   count++;
   BTN__output.innerHTML = `<h3>${count}</h3>`;
 });
+
 BTN__CART.addEventListener('click', () => {
   // validasi jika jumlah nya 0;
   if (count === 0) return;
   Swal.fire({
-    title: `${count}`,
-    icon: 'question',
-    confirmButtonText: 'success?',
+    title: `success`,
+    icon: 'success',
+    confirmButtonText: 'barang udah ditambahkan di cart',
   });
 
   const basePurchase = 125;
@@ -85,28 +92,24 @@ BTN__CART.addEventListener('click', () => {
       </div>
     </div> `;
 
-  // element sebelumnya ditambah sama yg sekarang habis itu render semua nya
-  cartContain.innerHTML += itemCheckOut;
-
+  // addDataToLocalStrogae(itemCheckOut);
+  renderItems(itemCheckOut);
+  removeEmptyComponent();
   notificationProduct();
   removeElement();
-
-  // total purchase keknya disini
-  // ini hanya sementara jadi lanjut besok.....
-  const tes = cartContain.children;
-  let totalPurchase = 0;
-  for (const key in tes) {
-    if (Object.hasOwnProperty.call(tes, key)) {
-      const element = tes[key];
-      let total = element.children[1].children[0].children[0];
-      const memisahkanMataUang = total.textContent.split('$');
-      const memisahkanNol = memisahkanMataUang[1].split('.00');
-      totalPurchase += parseInt(memisahkanNol[0]);
-      // console.log(memisahkanNol);
-    }
-  }
-  console.log(totalPurchase);
+  getItems_and_getNumber();
 });
+
+BTN__checkout.addEventListener('click', () => {
+  const priceTotal = getItems_and_getNumber();
+  console.log(priceTotal);
+});
+
+function renderItems(itemCheckOut) {
+  // render element items nya
+  // element sebelumnya ditambah sama yg sekarang habis itu render semua nya
+  cartContain.innerHTML += itemCheckOut;
+}
 
 function notificationProduct() {
   const countProductItem = cartContain.children.length;
@@ -119,8 +122,57 @@ function removeElement() {
     item.addEventListener('click', () => {
       item.parentElement.remove();
       notificationProduct();
+      checkItemCart();
+      getItems_and_getNumber();
     });
   });
+}
+
+function emptyComponent() {
+  return `
+  <p class = 'emptyComponent'>Your cart is empty</p>
+  `;
+}
+
+function checkItemCart() {
+  // pengecekan apakah cart-contain nya ada item nya apa tidak kalo ada maka next tapi kalo tidak ada render component empty
+  if (cartContain.children.length === 0) {
+    cartContain.innerHTML = emptyComponent();
+  }
+}
+
+function removeEmptyComponent() {
+  // function ini maksudnya hilangkan tag p sebelumnya karna default itemnya kosong maka kita harus hilangkan emptyComponent nya
+  if (cartContain.children[0].nodeName == 'P') {
+    cartContain.children[0].remove();
+  }
+}
+
+function getItems_and_getNumber() {
+  // total purchase keknya disini
+  // untuk jaga" kalo semisal data totalPrice nya dibutuhkan
+  const tes = cartContain.children;
+  let totalPurchase = 0;
+  let totalItemProduct = 0;
+  for (const key in tes) {
+    if (Object.hasOwnProperty.call(tes, key)) {
+      // find jumlah item
+      const element = tes[key];
+      const e = element.children[1].children[0];
+      const hasil = e.textContent.split('$');
+      const num = hasil[1].split('.00')[1];
+      const result = num.split('x')[1];
+      totalItemProduct += parseInt(result);
+
+      // find totalPrice
+      let total = element.children[1].children[0].children[0];
+      const memisahkanMataUang = total.textContent.split('$');
+      const memisahkanNol = memisahkanMataUang[1].split('.00');
+      totalPurchase += parseInt(memisahkanNol[0]);
+    }
+  }
+
+  return [totalItemProduct, totalPurchase];
 }
 
 // lightbox
@@ -161,4 +213,55 @@ const recomendedWidth = 1000;
 if (currentWidth >= recomendedWidth) {
   imagesContain.addEventListener('click', lighbox);
   lightboxClose.addEventListener('click', lighbox);
+}
+
+// from submit to google sheets
+// pada saat checkout data result kita msukkan di google sheet
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzE5fW0SGs0jj1jzw4z1-AJ2jTb6suFJyaw9W27yDuuCeitqrLRYgt1859hfF0Lrkukyw/exec';
+
+const form = document.forms['myForm'];
+form.addEventListener('submit', (e) => {
+  const [jumlahProduct, jumlahPrice] = getItems_and_getNumber();
+  createToForm(jumlahProduct, jumlahPrice);
+  console.log(form.children);
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then((response) => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'checkout berhasil',
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      // reset kembali ke empty element
+      cartContain.innerHTML = emptyComponent();
+    })
+    .catch((error) => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href="">Why do I have this issue?</a>',
+      });
+    });
+
+  // find element yg selain btn lalu di hapus dari form nya karna data selanjutnya agar bisa dimasukkan lagi
+  form.innerHTML = `<button type="submit" class="checkout">checkout</button>`;
+  console.log(form.children);
+});
+
+function createToForm(jumlahProduct, jumlahPrice) {
+  createElement('product', 'Sneakers');
+  createElement('jumlah', `x${jumlahProduct}`);
+  createElement('total', `$${jumlahPrice}.00`);
+}
+
+function createElement(id, value) {
+  const node = document.createElement('input');
+  node.setAttribute('name', id);
+  node.setAttribute('value', value);
+  node.setAttribute('type', 'text');
+  node.setAttribute('class', 'none');
+  form.appendChild(node);
 }
