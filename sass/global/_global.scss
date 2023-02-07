@@ -11,9 +11,14 @@ body {
   @media (min-width: $tablet) {
     padding: 0 3rem;
   }
-
   @media (min-width: $desktop) {
-    padding: 0 8rem;
+    width: 1200px;
+    margin: auto;
+  }
+
+  @media (min-width: 1440px) {
+    // padding: 0 8rem;
+    width: 1200px;
   }
 }
 
@@ -27,8 +32,7 @@ body {
     margin-top: 3rem;
   }
   @media (min-width: 1440px) {
-    width: 1200px;
-    margin: 3rem auto;
+    margin-top: 5rem;
   }
 }
 

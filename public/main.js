@@ -221,10 +221,18 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbzE5fW0SGs0jj1jzw4z1-
 
 const form = document.forms['myForm'];
 form.addEventListener('submit', (e) => {
+  const btn_loading = document.querySelector('.lds-ring');
+  const checkout_title = document.querySelector('.checkout-title');
+  // jalankan animation loading
+  // hilankan text chekout
+  btn_loading.classList.remove('none');
+  checkout_title.classList.add('none');
+
   const [jumlahProduct, jumlahPrice] = getItems_and_getNumber();
   createToForm(jumlahProduct, jumlahPrice);
   console.log(form.children);
   e.preventDefault();
+
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then((response) => {
       Swal.fire({
@@ -244,11 +252,24 @@ form.addEventListener('submit', (e) => {
         text: 'Something went wrong!',
         footer: '<a href="">Why do I have this issue?</a>',
       });
+    })
+    .finally(() => {
+      // lalu jika data nya udah ke post
+      // kembalikan title chekout nya
+      btn_loading.classList.add('none');
+      // matikan animete loading
+      checkout_title.classList.remove('none');
+      // reset total browser
+      location.reload();
     });
 
   // find element yg selain btn lalu di hapus dari form nya karna data selanjutnya agar bisa dimasukkan lagi
-  form.innerHTML = `<button type="submit" class="checkout">checkout</button>`;
-  console.log(form.children);
+  //   form.innerHTML = `<button type="submit" class="checkout">
+  //   <h4 class="checkout-title">checkout</h4>
+  //   <div class="lds-ring none">
+  //     <div></div>
+  //   </div>
+  // </button>`;
 });
 
 function createToForm(jumlahProduct, jumlahPrice) {
