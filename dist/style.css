@@ -661,4 +661,27 @@ ul {
 .lightbox-prev,
 .lightbox-next {
   display: flex;
+}
+
+footer {
+  text-align: center;
+}
+footer h3 {
+  font-size: 1rem;
+  color: hsl(219deg, 9%, 45%);
+}
+@media (min-width: 650px) {
+  footer {
+    margin-top: 3.5rem;
+  }
+}
+@media (min-width: 962px) {
+  footer {
+    margin-top: 5rem;
+  }
+}
+@media (min-width: 1440px) {
+  footer {
+    margin-top: 8rem;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+footer {
+  text-align: center;
+  h3 {
+    font-size: $text-base;
+    color: $Dark-grayish-blue;
+  }
+  @media (min-width: $tablet) {
+    margin-top: 3.5rem;
+  }
+  @media (min-width: $desktop) {
+    margin-top: 5rem;
+  }
+  @media (min-width: 1440px) {
+    margin-top: 8rem;
+  }
+}
