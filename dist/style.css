@@ -24,7 +24,7 @@ p,
 span,
 li,
 del {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 h1,
@@ -66,25 +66,23 @@ p {
   color: hsl(219deg, 9%, 45%);
 }
 
-body {
+.container {
   width: 100%;
-  position: relative;
   height: 100vh;
-  background-color: hsl(223deg, 64%, 98%);
 }
 @media (min-width: 650px) {
-  body {
+  .container {
     padding: 0 3rem;
   }
 }
 @media (min-width: 962px) {
-  body {
+  .container {
     width: 1200px;
     margin: auto;
   }
 }
 @media (min-width: 1440px) {
-  body {
+  .container {
     width: 1200px;
   }
 }
@@ -95,15 +93,20 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 650px) {
+  .main {
+    margin-top: 4rem;
+  }
+}
 @media (min-width: 962px) {
   .main {
-    grid-template-columns: 400px 1fr;
-    margin-top: 3rem;
+    grid-template-columns: 450px 1fr;
+    gap: 3rem;
   }
 }
 @media (min-width: 1440px) {
   .main {
-    margin-top: 5rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -144,6 +147,11 @@ ul {
     padding: 0;
   }
 }
+@media (min-width: 1440px) {
+  .header {
+    height: 80px;
+  }
+}
 
 .header__left {
   align-items: center;
@@ -169,6 +177,11 @@ ul {
     font-size: 1.875rem;
   }
 }
+@media (min-width: 1440px) {
+  .header__left .header__title {
+    font-size: 2.25rem;
+  }
+}
 .header__left .header__nav {
   display: none;
 }
@@ -188,13 +201,18 @@ ul {
   }
   .header__left .header__nav ul li:hover::before {
     position: absolute;
-    content: '';
+    content: "";
     height: 2px;
     background-color: hsl(26deg, 100%, 55%);
     border-radius: 4px;
     right: 0;
     left: 0;
     bottom: -15px;
+  }
+}
+@media (min-width: 1440px) {
+  .header__left .header__nav ul li {
+    font-size: 1.125rem;
   }
 }
 
@@ -209,6 +227,11 @@ ul {
   transform: translateY(2px);
   cursor: pointer;
 }
+@media (min-width: 1440px) {
+  .header__right .header__cart {
+    width: 25px;
+  }
+}
 .header__right .header__cart .count-product-notificaton {
   display: flex;
   position: absolute;
@@ -221,6 +244,12 @@ ul {
   top: -8px;
   right: -5px;
   background-color: hsl(26deg, 100%, 55%);
+}
+@media (min-width: 1440px) {
+  .header__right .header__cart .count-product-notificaton {
+    font-size: 10px;
+    font-weight: 700;
+  }
 }
 .header__right .header__profile {
   width: 35px;
@@ -236,6 +265,12 @@ ul {
 }
 .header__right .header__profile:hover {
   border: 1px solid hsl(26deg, 100%, 55%);
+}
+@media (min-width: 1440px) {
+  .header__right .header__profile {
+    width: 40px;
+    height: 40px;
+  }
 }
 @media (min-width: 962px) {
   .header__right {
@@ -288,7 +323,7 @@ ul {
   right: 20px;
   left: 20px;
   padding: 1rem 0;
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   background-color: hsl(0deg, 0%, 100%);
   z-index: 2;
@@ -381,7 +416,7 @@ ul {
   border: 4px solid #fff;
   border-radius: 50%;
   -webkit-animation: lds-ring 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  animation: lds-ring 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #fff transparent transparent transparent;
 }
 
@@ -421,10 +456,11 @@ ul {
 }
 .main__image-product .swiper-slide {
   width: 100%;
+  cursor: pointer;
 }
 .main__image-product .swiper-slide img {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   background-position: center;
   width: 100%;
   height: 100%;
@@ -441,7 +477,7 @@ ul {
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  content: '';
+  content: "";
 }
 
 .swiper-button-prev,
@@ -460,7 +496,7 @@ ul {
 }
 @media (min-width: 962px) {
   .swiper-button-prev,
-  .swiper-button-next {
+.swiper-button-next {
     display: none;
   }
 }
@@ -468,13 +504,7 @@ ul {
 .main__description {
   padding: 1rem;
 }
-@media (min-width: 650px) {
-  .main__description {
-    margin-top: 1rem;
-    text-align: center;
-  }
-}
-@media (min-width: 650px) {
+@media (min-width: 962px) {
   .main__description {
     margin-top: 1rem;
     text-align: start;
@@ -484,13 +514,31 @@ ul {
   color: hsl(26deg, 100%, 55%);
   font-size: 1rem;
 }
+@media (min-width: 1440px) {
+  .main__description__company-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.7rem;
+  }
+}
 .main__description__title {
   font-size: 1.875rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
+@media (min-width: 1440px) {
+  .main__description__title {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
 .main__description__text {
   margin-bottom: 0.5rem;
+}
+@media (min-width: 1440px) {
+  .main__description__text {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .priceContain {
@@ -513,6 +561,11 @@ ul {
 .priceContain .price h2 {
   margin-right: 1rem;
 }
+@media (min-width: 1440px) {
+  .priceContain .price h2 {
+    font-size: 2.25rem;
+  }
+}
 .priceContain .price p {
   background-color: hsl(25deg, 100%, 94%);
   color: hsl(26deg, 100%, 55%);
@@ -521,6 +574,11 @@ ul {
   font-weight: 700;
   border-radius: 4px;
 }
+@media (min-width: 1440px) {
+  .priceContain .price p {
+    font-size: 1.125rem;
+  }
+}
 .priceContain__pricePrev {
   font-weight: 700;
   color: hsl(220deg, 14%, 75%);
@@ -528,6 +586,11 @@ ul {
 @media (min-width: 650px) {
   .priceContain__pricePrev {
     margin-top: 0.3rem;
+  }
+}
+@media (min-width: 1440px) {
+  .priceContain__pricePrev {
+    font-size: 1.25rem;
   }
 }
 
@@ -574,17 +637,25 @@ ul {
     font-size: 1rem;
   }
 }
-.product-btn-count__minus,
-.product-btn-count__plus {
+@media (min-width: 650px) {
+  .product-btn-count__num h3 {
+    font-size: 1.125rem;
+  }
+}
+.product-btn-count__minus, .product-btn-count__plus {
   display: flex;
   align-items: center;
   width: 15px;
   cursor: pointer;
 }
 @media (min-width: 650px) {
-  .product-btn-count__minus,
-  .product-btn-count__plus {
+  .product-btn-count__minus, .product-btn-count__plus {
     width: 10px;
+  }
+}
+@media (min-width: 1440px) {
+  .product-btn-count__minus, .product-btn-count__plus {
+    width: 15px;
   }
 }
 
@@ -645,6 +716,11 @@ ul {
   opacity: 1;
   overflow: visible;
 }
+@media (min-width: 1440px) {
+  .lightbox-modal {
+    top: 70px;
+  }
+}
 
 .tumb-lightbox {
   position: relative;
@@ -686,4 +762,4 @@ footer h3 {
   footer {
     margin-top: 8rem;
   }
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

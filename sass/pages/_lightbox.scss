@@ -20,6 +20,10 @@
   z-index: 200;
   opacity: 1;
   overflow: visible;
+
+  @media (min-width: $very-dekstop) {
+    top: 70px;
+  }
 }
 
 .tumb-lightbox {

@@ -9,6 +9,9 @@
     border-bottom: 2px solid #e2e2e2;
     padding: 0;
   }
+  @media (min-width: $very-dekstop) {
+    height: 80px;
+  }
 
   // dan default ..... header akan menjadi parent for cart componen , jika udah ukuran dekstop maka parent nya bukan header lagi melainkan ( header - right )
   position: relative;
@@ -33,6 +36,9 @@
     transform: translateY(-2px);
     @media (min-width: $desktop) {
       font-size: $text-3xl;
+    }
+    @media (min-width: $very-dekstop) {
+      font-size: $text-4xl;
     }
   }
 
@@ -63,21 +69,30 @@
         }
       }
     }
+    @media (min-width: $very-dekstop) {
+      ul {
+        li {
+          font-size: $text-lg;
+        }
+      }
+    }
   }
 }
 
 .header__right {
-  // position: relative;
   align-items: center;
   width: 75px;
   justify-content: space-around;
-
   .header__cart {
     position: relative;
     width: 20px;
     transform: translateY(2px);
     cursor: pointer;
+    // border: 1px solid red;
 
+    @media (min-width: $very-dekstop) {
+      width: 25px;
+    }
     // notification count cart
     .count-product-notificaton {
       display: flex;
@@ -91,10 +106,17 @@
       top: -8px;
       right: -5px;
       background-color: $Orange;
+      // border: 1px solid red;
+
+      @media (min-width: $very-dekstop) {
+        font-size: 10px;
+        font-weight: $font-lg;
+      }
     }
   }
 
   .header__profile {
+    // border: 1px solid red;
     width: 35px;
     height: 35px;
     border: 1px solid transparent;
@@ -107,6 +129,11 @@
     }
     &:hover {
       border: 1px solid $Orange;
+    }
+
+    @media (min-width: $very-dekstop) {
+      width: 40px;
+      height: 40px;
     }
   }
 
