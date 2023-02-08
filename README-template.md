@@ -45,7 +45,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Live Site URL: [live site URL](https://dev-Ecomerrce.azisaja.repl.co)
+- Live Site URL: [live site URL](https://ziss25.github.io/ecommerce-product-page-main-Sneakers/)
 
 ## My process
 
