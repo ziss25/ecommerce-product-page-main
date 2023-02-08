@@ -82,13 +82,13 @@ BTN__CART.addEventListener('click', () => {
   const itemCheckOut = `
     <div class="modal-item">
       <div class="image-product">
-        <img src="/images/image-product-4-thumbnail.jpg" alt="" srcset="" />
+        <img src="images/image-product-4-thumbnail.jpg" alt="" srcset="" />
       </div>
       <div class="description-product">
         <p>Fall Limited Edition Sneakers $${basePurchase}.00 x ${count} <span>$${basePurchase * count}.00 </span></p>
       </div>
       <div class="icon-delete">
-        <img src="/images/icon-delete.svg" alt="" />
+        <img src="images/icon-delete.svg" alt="" />
       </div>
     </div> `;
 
