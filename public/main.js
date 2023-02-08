@@ -75,7 +75,7 @@ BTN__CART.addEventListener('click', () => {
   Swal.fire({
     title: `success`,
     icon: 'success',
-    confirmButtonText: 'barang udah ditambahkan di cart',
+    confirmButtonText: 'Item has been added to cart',
   });
 
   const basePurchase = 125;
@@ -238,7 +238,7 @@ form.addEventListener('submit', (e) => {
       Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'checkout berhasil',
+        title: 'checkout success',
         showConfirmButton: false,
         timer: 2000,
       });
@@ -260,7 +260,9 @@ form.addEventListener('submit', (e) => {
       // matikan animete loading
       checkout_title.classList.remove('none');
       // reset total browser
-      location.reload();
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     });
 
   // find element yg selain btn lalu di hapus dari form nya karna data selanjutnya agar bisa dimasukkan lagi
