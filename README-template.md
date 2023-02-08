@@ -45,8 +45,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](#)
-- Live Site URL: [Add live site URL here](https://dev-Ecomerrce.azisaja.repl.co)
+- Live Site URL: [live site URL](https://dev-Ecomerrce.azisaja.repl.co)
 
 ## My process
 
@@ -104,8 +103,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Add your name here](https://ziss25.github.io/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ziss25)
+- Website - [ziss25](https://ziss25.github.io/)
+- Frontend Mentor - [@ziss25](https://www.frontendmentor.io/profile/ziss25)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
